@@ -1,5 +1,6 @@
 package com.example.coolmathgame
 
+import android.content.Intent
 import android.content.IntentSender
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -84,8 +85,22 @@ class GameActivity : AppCompatActivity() {
 
                      pauseTimer()
                      resetTimer()
-                     gameContinue()
+
                      editTextAnswer.setText("")
+
+            if (userLife == 0)
+            {
+                Toast.makeText(applicationContext,"Game Over!",Toast.LENGTH_LONG).show()
+                val intent = Intent(this@GameActivity,ResultActivity::class.java)
+                intent.putExtra("score",userScore)
+                startActivity(intent)
+                finish()
+            }
+            else
+            {
+                gameContinue()
+            }
+
              }
         }
 
