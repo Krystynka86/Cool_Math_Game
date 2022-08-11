@@ -37,6 +37,8 @@ class GameActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
 
+        supportActionBar!!.title = "Addition"
+
         textScore = findViewById(R.id.textViewScore)
         textLife = findViewById(R.id.textViewLife)
         textTime = findViewById(R.id.textViewTime)
